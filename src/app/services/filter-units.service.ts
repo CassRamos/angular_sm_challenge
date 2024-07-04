@@ -65,7 +65,7 @@ export class FilterUnitsService {
         }
       }
     }
-    return false;
+    return false; 
   }
 
   filter(results: Location[], showClosed: boolean, hour: string) {

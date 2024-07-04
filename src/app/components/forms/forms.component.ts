@@ -18,7 +18,7 @@ export class FormsComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private getUnitsService: GetUnitsService,
+    private unitsService: GetUnitsService,
     private filterUnitsService: FilterUnitsService
   ) {
     this.formGroup = this.formBuilder.group({
@@ -26,9 +26,9 @@ export class FormsComponent {
       showClosed: true,
     });
 
-    getUnitsService.getAllUnits().subscribe((data) => {
-      this.results = data.locations;
-      this.filteredResults = data.locations;
+    unitsService.getAllUnits().subscribe((data) => {
+      this.results = data;
+      this.filteredResults = data;
     });
   }
 
@@ -40,6 +40,7 @@ export class FormsComponent {
       showClosed,
       hour
     );
+    this.unitsService.setFilteredUnits(this.filteredResults);
   }
 
   onClean(): void {
