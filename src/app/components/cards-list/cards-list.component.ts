@@ -13,9 +13,5 @@ import { NgFor } from '@angular/common';
 export class CardsListComponent {
   @Input() unitsList: Location[] = [];
 
-  ngOnInit() {
-    console.log(this.unitsList);
-  }
-
   constructor() {}
 }
